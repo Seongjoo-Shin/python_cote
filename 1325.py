@@ -5,12 +5,9 @@ input = sys.stdin.readline
 
 def bfs(v):
 	q = deque([v])
-	ans = 0
 	chk = [False] * (N+1)
-	
-	q.append(v)
 	chk[v] = True
-	
+	ans = 1
 	while q:
 		v = q.popleft()
 		for nxt in adj[v]:
