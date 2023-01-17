@@ -1,5 +1,12 @@
 N = int(input())
-load = [map(int, input().split())]
-price = [map(int, input().split())]
+load = list(map(int, input().split()))
+price = list(map(int, input().split()))
 
-print(N, load, price)
+ans = 0
+tmp = price[0]
+for i in range(N-1):
+	if price[i] < tmp:
+		tmp = price[i]
+	ans += tmp * load[i]
+
+print(ans)
