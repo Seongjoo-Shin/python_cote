@@ -17,7 +17,6 @@ def bfs(start_y, start_x):
 			if (0 <= ny < N) and (0 <= nx < M) and  adj[ny][nx] == 1:
 				adj[ny][nx] = 0
 				q.append((ny, nx))
-	return cnt
 
 N, M = map(int, input().split())
 adj = [list(map(int, input().split())) for _ in range(N)]
