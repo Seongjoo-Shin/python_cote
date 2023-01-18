@@ -5,6 +5,6 @@ three = bisect_right(v, 3) - bisect_left(v, 3) # 4 - 2
 four = bisect_right(v, 4) - bisect_left(v, 4) # 0 - 0
 six = bisect_right(v, 6) - bisect_left(v, 6) #  
 
-print(f'number of 3 : {three}')
-print(f'number of 4 : {four}')
-print(f'number of 6 : {six}')
+print(f'1. number of 3 : {three}')
+print(f'2. number of 4 : {four}')
+print(f'3. number of 6 : {six}')
