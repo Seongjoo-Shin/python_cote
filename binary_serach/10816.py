@@ -12,3 +12,6 @@ for q in qry:
 	ans.append(rr-ll)
 
 print(*ans)
+
+
+# 3 0 0 1 2 0 0 2
