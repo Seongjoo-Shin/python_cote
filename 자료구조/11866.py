@@ -5,5 +5,19 @@
 # 원에서 사람들이 제거되는 순서를 (N, K)-요세푸스 순열이라고 한다. 
 # 예를 들어 (7, 3)-요세푸스 순열은 <3, 6, 2, 7, 5, 1, 4>이다.
 
-
+from collections import deque
 N, K = map(int, input().split())
+
+q = deque(i for i in range(1, N+1))
+
+ans = deque()
+
+print("<", end="")
+while q:
+	for i in range(K-1):
+		temp = q.popleft()
+		q.append(temp)
+	print(q.popleft(), end="")
+	if q:
+		print(', ', end='')
+print(">", end="")
