@@ -1,19 +1,34 @@
-brackets = list(map(str, input()))
-
+brackets = list(input())
 stk = []
 answer = 0
-for i in range(len(brackets)):
-	if brackets[i] == '(' or brackets[i] == '[':
-		stk.append(brackets[i])
-	elif brackets[i] == ')':
-		if stk[-1] == '(':
-			stk.pop()
-			answer += 2
-	elif brackets[i] == ']':
-		if stk[-1] == '[':
-			stk.pop()
-			answer += 3
+ans = 1
 
-print(stk)
-print(answer)
+for i in range(len(brackets)):
+	if brackets[i] == '(':
+		stk.append(brackets[i])
+		ans *= 2
+	elif brackets[i] == '[':
+		stk.append(brackets[i])
+		ans *= 3
+	elif brackets[i] == ')':
+		if not stk or stk[-1] == '[':
+			answer = 0
+			break
+		if brackets[i-1] == '(':
+			answer += ans
+		stk.pop()
+		ans //= 2
+	elif brackets[i] == ']':
+		if not stk or stk[-1] == '(':
+			answer = 0
+			break
+		if brackets[i-1] == '[':
+			answer += ans
+		stk.pop()
+		ans //= 3
+
+if stk:
+	print(0)
+else:
+	print(answer)
 # (()[[]])([])
