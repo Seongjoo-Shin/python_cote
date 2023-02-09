@@ -6,8 +6,6 @@ input = sys.stdin.readline
 dy = [0, 1, 0, -1]
 dx = [1, 0, -1, 0]
 
-def is_valid_coord(y, x):
-	return 0 <= y < n and 0 <= x < m
 def bfs(start_y, start_x):
 	q = deque()
 	q.append((start_y, start_x))
@@ -20,7 +18,7 @@ def bfs(start_y, start_x):
 			ny = y + dy[i]
 			nx = x + dx[i]
 
-			if is_valid_coord(ny, nx) and adj[ny][nx] == 1:
+			if 0 <= ny < n and 0 <= nx < m and adj[ny][nx] == 1:
 				adj[ny][nx] = 0
 				q.append((ny, nx))
 				cnt += 1
@@ -36,5 +34,9 @@ for i in range(n):
 		if adj[i][j] == 1:
 			ans.append(bfs(i, j))
 
-print(len(ans))
-print(max(ans))
+if len(ans) == 0:
+	print(len(ans))
+	print(0)
+else:
+	print(len(ans))
+	print(max(ans))
