@@ -25,17 +25,10 @@ for _ in range(1, M+1):
 	a, b = map(int, input().split())
 	adj[b].append(a)
 
-ans = []
-max_value = -1
+ans = [0 for _ in range(N+1)]
 for i in range(1, N+1):
-	s = bfs(i)
-	if s > max_value:
-		ans = [i]
-		max_value = s
-	elif s == max_value:
-		ans.append(i)
-		max_value = s
-		
+	ans[i] = bfs(i)		
 
-for i in ans:
-	print(i, end=" ")
+for i in range(1, N+1):
+	if ans[i] == max(ans):
+		print(i, end=" ")
