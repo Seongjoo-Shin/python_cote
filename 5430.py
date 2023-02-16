@@ -1,31 +1,32 @@
-def R(lst): # 뒤집기
-	return lst[::-1]
-
-def D(lst): # 맨앞 제거
-	return lst[1:]
-
+from collections import deque
 
 t = int(input())
-flag = 1
 for _ in range(t):
-	p = list(input())
+	p = input()
 	n = int(input())
-	lst = input()[1:-1].split(",")
+	lst = deque(input()[1:-1].split(","))
+
+	if n == 0:
+		lst = []
+	
+	flag = 0
 
 	for c in p:
 		if c == 'R':
 			flag += 1
 		elif c == 'D':
-			if len(lst) <= 1:
+			if len(lst) == 0:
 				print('error')
 				break
 			else:
 				if flag % 2 == 0:
-					lst.reverse()
-					lst = D(lst)
-	if lst:
+					lst.popleft()
+				else:
+					lst.pop()
+	
+	else:
 		if flag % 2 == 0:
-			lst.reverse()
 			print('['+ ','.join(lst) + ']')
 		else:
+			lst.reverse()
 			print('['+ ','.join(lst) + ']')
