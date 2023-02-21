@@ -1,3 +1,4 @@
+Greedy
 greedy의 뜻 탐욕스러운, 욕심 많은
 
 greedy algorithm 

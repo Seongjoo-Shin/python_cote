@@ -1,5 +1,4 @@
-https://skmouse.tistory.com/entry/DP%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8DDynamic-Programming-%EC%8B%AC%ED%99%94
-
+Dynamic Programming
 1. 최적 부분구조
 -> 큰 문제를 작은 문제로 나눌 수 있으며, 작은 문제의 답을 모아서 큰 문제를 해결할 수 있다
 2. 중복되는 부분 문제
