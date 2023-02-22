@@ -5,8 +5,8 @@ if len(l) != len(r):
 else:
 	for i in range(len(l)):
 		if l[i] == r[i]:
-			print(l[i], r[i])
-			ans += 1
+			if l[i] == '8':
+				ans += 1
 		else:
 			break
 
