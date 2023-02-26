@@ -6,7 +6,6 @@ dx = [1, 0, -1, 0]
 n = int(input())
 
 m = [list(input().rstrip()) for _ in range(n)]
-visited = [[False] * n for _ in range(n)]
 
 def bfs(y, x):
 	q = deque()
@@ -32,6 +31,7 @@ for i in range(n):
 		if m[i][j] == '1' :
 			ans.append(bfs(i, j))
 
+ans.sort()
 print(len(ans))
 for i in ans:
 	print(i)
